@@ -37,11 +37,17 @@ p {
   font-size: 16px;
 }
 
+.main-header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  opacity: 0.8;
+}
 .main-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 5px 0;
 }
 .main-header .container .logo a img {
   max-width: 100%;
@@ -130,12 +136,19 @@ p {
   color: #b61984;
 }
 
+.bg-top img {
+  width: 100%;
+}
+
 .about-us {
-  background: url(../img/yellow_top_wave_01.png);
+  background: url(../img/Violet_top_left_wave.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
+  padding-top: 40px;
 }
 .about-us .container .about-us-main {
+  animation: fadeInDown 2s;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,9 +159,11 @@ p {
 
 .feature {
   padding-top: 40px;
-  background: url(../img/Violet_top_left_wave.png);
+  background: url(../img/Wave_White_bottom_right_shape_01.png);
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #dcd1f3;
 }
 .feature .container .feature-main {
   display: flex;
@@ -172,6 +187,7 @@ p {
   align-items: center;
 }
 .feature .container .feature-list .row .col .item {
+  animation: fadeInDown 3s;
   display: flex;
   padding: 20px;
 }
@@ -192,6 +208,7 @@ p {
   padding-top: 100px;
 }
 .sharing-student .container .main-sharing {
+  animation: fadeInDown 4s;
   display: flex;
   position: relative;
 }
@@ -216,9 +233,8 @@ p {
 .teacher {
   background: url(../img/accent_bottom_wave_01.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  background-position: center center;
+  background-size: auto;
+  background-position: bottom center;
   z-index: 0;
   padding-top: 100px;
 }
@@ -255,14 +271,20 @@ p {
   z-index: 2;
   opacity: 1;
 }
-.teacher .container .teacher-main .row .col {
+.teacher .container .teacher-main .row {
+  overflow: hidden;
   display: flex;
+}
+.teacher .container .teacher-main .row .col {
   border-radius: 10px;
   overflow: hidden;
+  text-align: center;
+  padding: 0 20px;
 }
 .teacher .container .teacher-main .row .col .item {
-  text-align: center;
-  padding: 20px;
+  animation: fadeInDown 5s;
+  background-color: #fff;
+  border-radius: 10px;
 }
 .teacher .container .teacher-main .row .col .item .item-img img {
   width: 100%;
@@ -274,6 +296,10 @@ p {
 }
 .teacher .container .teacher-main .row .col .item .item-content p {
   margin: 10px 0;
+  line-height: 30px;
+}
+.teacher .container .teacher-main .row .col .item .item-contact {
+  padding-bottom: 20px;
 }
 .teacher .container .teacher-main .row .col .item .item-contact a {
   color: #191919;
@@ -380,4 +406,15 @@ p {
 }
 .footer .container .row .col .item-2 .footer-btn .btn:hover a {
   color: #fff;
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
