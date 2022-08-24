@@ -1,0 +1,494 @@
+// global
+//khai baso bieens
+/*
++ text: color, font-size, font-weight
+
+*/
+
+$text-c1-primary: #b61984;
+$text-c1-dark: #191919;
+$text-c2-dark: #000000;
+$text-c1-light: #fff;
+
+$text-xs: 14px;
+$text-base: 16px;
+$text-xl: 18px;
+$text-2xl: 20px;
+$text-3xl: 30px;
+$text-4xl: 40px;
+$text-5xl: 50px;
+$text-6xl: 60px;
+
+$text-light: 300;
+$text-regular: 400;
+$text-semibold: 500;
+$text-middlebold: 600;
+$text-bold: 700;
+
+/*
+ + background: color
+*/
+
+$bg-c1-primary: #b61984;
+$bg-c1-dark: #191919;
+$bg-c1-light: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.title {
+  color: $text-c1-primary;
+  font-size: $text-base;
+  font-weight: $text-bold;
+  line-height: 50px;
+}
+.sub-title {
+  color: $text-c1-dark;
+  font-size: $text-6xl;
+  font-weight: $text-semibold;
+  line-height: 60px;
+}
+p{
+  color: $text-c2-dark;
+  font-size: $text-base;
+}
+
+// global
+
+//thay vi di tu cha -> con nhu viet css binh thuong thi viet thoe nesting css
+
+.main-header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    .logo {
+      a {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .menu {
+      .menu-item {
+        text-decoration: none;
+        color: $text-c1-dark;
+        font-size: $text-xs;
+        font-weight: 600;
+        line-height: 13px;
+        margin: 0 20px;
+        position: relative;
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          width: 13px;
+          height: 13px;
+          background-color: $bg-c1-primary;
+          border-radius: 50%;
+          bottom: -30px;
+          left: 30%;
+          text-align: center;
+          transform: scale(0, 1);
+          transition-duration: 0.3s;
+        }
+        &:hover {
+          color: $text-c1-primary;
+          &::before {
+            transform: scale(1, 1);
+          }
+        }
+      }
+      .active {
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: $bg-c1-primary;
+          border-radius: 50%;
+          bottom: -30px;
+          left: 30%;
+          text-align: center;
+          transform: scale(1, 1);
+        }
+      }
+    }
+    .contact-menu {
+      display: flex;
+      align-items: center;
+      .button-number-contact {
+        padding: 12px 20px;
+        line-height: 20px;
+        border-radius: 30px;
+        background-color: $bg-c1-primary;
+        margin-right: 10px;
+        cursor: pointer;
+        font-weight: $text-semibold;
+        a {
+          text-decoration: none;
+          color: $text-c1-light;
+          font-size: $text-xs;
+          .bt-number-icon {
+            display: inline-block;
+            padding-right: 5px;
+          }
+          .bt-number-text {
+            display: inline-block;
+          }
+        }
+        &:hover {
+          background-color: $bg-c1-light;
+          transition-duration: 0.7s;
+          a {
+            color: $text-c1-dark;
+          }
+          border: solid 0.5px $text-c1-primary;
+        }
+      }
+      a {
+        color: $text-c1-dark;
+        margin: 0 5px;
+        font-size: $text-xs;
+        &:hover{
+          color: $text-c1-primary;
+        }
+      }
+      
+    }
+  }
+}
+
+.about-us {
+  background: url(../img/yellow_top_wave_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    .about-us-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .about-title {
+        .title {
+        }
+        .sub-title {
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.feature{
+  padding-top: 40px;
+  background: url(../img/Violet_top_left_wave.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container{
+    .feature-main{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .feature-img{
+        width: 50%;
+        img{
+          width: 100%;
+        }
+      }
+      .feature-title{
+        width: 50%;
+        .title{
+
+        }
+        .sub-title{
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .feature-list{
+      .row{
+        .col{
+          display: flex;
+          align-items: center;
+          .item{
+            display: flex;
+            padding: 20px;
+            .icon{
+              font-size: $text-3xl;
+              margin-right: 15px;
+            }
+            .item-content{
+              a{
+                text-decoration: none;
+                font-weight: $text-semibold;
+              }
+              p{
+                margin-top: 15px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.sharing-student{
+  padding-top: 100px;
+  .container{
+    .main-sharing{
+      display: flex;
+      position: relative;
+      .sharing-content{
+        img{
+          width: 70%;
+        }
+        .sharing-title{
+          position: absolute;
+          top: 35%;
+          width: 25%;
+          left: 10%;
+          text-align: center;
+          p{
+            line-height: 30px;
+            font-size: $text-2xl;
+          }
+          .title{
+
+          }
+          span{
+
+          }
+        }
+      }
+      .sharing-img-2{
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.teacher{
+  background: url(../img/accent_bottom_wave_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center center;
+  z-index: 0;
+  padding-top: 100px;
+  .container{
+    .teacher-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .teacher-title-1{
+        .sub-title{
+
+        }
+      }
+      .teacher-title-2{
+        padding: 12px 20px;
+        line-height: 20px;
+        border-radius: 30px;
+        background-color: $bg-c1-primary;
+        margin-right: 10px;
+        cursor: pointer;
+        font-weight: $text-semibold;
+        a{
+          color: $bg-c1-light;
+          .bt-number-text{
+            display: inline-block;
+          }
+        }
+        &:hover {
+          background-color: $bg-c1-light;
+          transition-duration: 0.7s;
+          a {
+            color: $text-c1-dark;
+          }
+          border: solid 0.5px $text-c1-primary;
+        }
+      }
+    }
+    .teacher-main{
+      padding-top: 40px;
+      z-index: 2;
+      opacity: 1;
+      .row{
+        .col{
+          display: flex;
+          border-radius: 10px;
+          overflow: hidden;
+          .item{
+            text-align: center;
+            padding: 20px;
+            .item-img{
+              img{
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+              }
+            }
+            .item-content{
+              .title{
+
+              }
+              span{
+                font-weight: $text-middlebold;
+                font-size: $text-2xl;
+              }
+              p{
+                margin:10px 0;
+              }
+            }
+            .item-contact{
+              a{
+                color: $text-c1-dark;
+                margin: 0 5px;
+                font-size: $text-xs;
+                &:hover{
+                  color: $text-c1-primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.footer{
+  padding: 100px 0;
+  background: url(../img/footer_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 500px;
+  .container{
+    .row{
+      .col{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .item-1{
+          .title{
+            font-size: $text-2xl;
+            color: $text-c1-light;
+          }
+          .list-item-info{
+            .item-info{
+              margin: 10px 0;
+              i{
+                color: $text-c1-light;
+
+              }
+              span{
+                color: $text-c1-light;
+              }
+            }
+          }
+          a{
+            display: inline-block;
+            color: $text-c1-light;
+            margin: 0 5px;
+            font-size: $text-xs;
+            &:hover{
+              color: $text-c1-dark;
+            }
+          }
+
+        }
+        .item{
+          .title{
+            font-size: $text-2xl;
+            color: $text-c1-light;
+          }
+          a{
+            position: relative;
+            text-decoration: none;
+            display: block;
+            padding: 7px 0;
+            color: $text-c1-light;
+            &::before{
+              position: absolute;
+              display: block;
+              content: "";
+              height: 1px;
+              opacity: 0.2;
+              background-color: $bg-c1-dark;
+              bottom: 0;
+              left: 0;
+              width: 90%;
+              transform: scale(1, 1);
+            }
+          }
+
+        }
+        .item-2{
+          .title{
+            font-size: $text-2xl;
+            color: $text-c1-light;
+            margin-bottom: 20px;
+
+          }
+          .footer-btn{
+            input{
+              text-align: center;
+              background-color: #aa017e;
+              padding: 12px ;
+              border-radius: 20px;
+              color: $text-c1-light;
+              border: 1px solid #fff;
+            }
+            .btn{
+              width: 100%;
+              margin-top: 10px;
+              text-align: center;
+              padding: 12px 36px;
+              line-height: 20px;
+              border-radius: 30px;
+              background-color: $bg-c1-light;
+              margin-right: 10px;
+              cursor: pointer;
+              font-weight: $text-semibold;
+              a{
+                color: $bg-c1-primary;
+                .bt-number-text{
+                  display: inline-block;
+                }
+              }
+              &:hover {
+                background-color: #aa017e;
+                transition-duration: 0.7s;
+                a {
+                  color: $text-c1-light;
+                }
+                border: solid 0.5px $text-c1-light;
+              }
+            }
+          }
+
+          }
+        }
+
+      }
+    }
+  }
+
+
+// #aa017e
+
+
